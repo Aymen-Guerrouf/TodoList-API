@@ -28,13 +28,10 @@ module.exports = (app) => {
       { usernameField: "email" },
       async (email, password, done) => {
         try {
-          console.log("Received email:", email);
-          console.log("Received password:", password);
           const user = await User.findOne({ email });
           console.log("User:", user);
 
           if (!user) {
-            console.log("User not found");
             return done(null, false, { message: "Incorrect email." });
           }
 

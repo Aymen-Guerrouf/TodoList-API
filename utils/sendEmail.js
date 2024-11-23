@@ -6,12 +6,12 @@ dotenv.config({ path: "./config/config.env" });
 
 // Create a transporter using SMTP transport
 const transporter = nodemailer.createTransport({
-  host: "sandbox.smtp.mailtrap.io",
-  port: 587,
+  host: process.env.SMTP_EMAIL,
+  port: process.env.SMTP_PORT,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: "73d907466fb9ee",
-    pass: "048748a822682c",
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
   },
 });
 
