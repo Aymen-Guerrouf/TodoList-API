@@ -5,7 +5,6 @@ const path = require("path");
 exports.getAllTodos = asyncHandler(async (req, res, next) => {
   const filter = {};
   console.log("user:", req.user.id);
-  // More robust filtering
   if (req.query.title) {
     filter.title = { $regex: req.query.title, $options: "i" };
   }
@@ -68,20 +67,6 @@ exports.getAllTodos = asyncHandler(async (req, res, next) => {
     total,
   });
 });
-/* / @desc    Get a todo
-// @route   GET /api/v1/todo/:id
-// @access  Private
-
-exports.getTodo = asyncHandler(async (req, res, next) => {
-  const todo = await Todo.findById(req.params.id);
-  if (!todo) {
-    return next(
-      new ErrorResponse(`Todo not found with the id of ${req.params.id}`, 404)
-    );
-  }
-  res.status(200).json({ success: true, data: todo });
-});
- */
 
 // @desc    create a todo
 // @route   POST /api/v1/todo
