@@ -17,7 +17,8 @@
     <li>Get a list of all tasks</li>
     <li>Mark a task as completed</li>
     <li>Search for a specific task </li>
-    <li> Sort tasks by name,status,date...</li>s
+    <li> Sort tasks by name,status,date...</li>
+    <li>authentication and authentication with google </li>
   </ul>
   
   <hr>
