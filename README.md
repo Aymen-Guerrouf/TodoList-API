@@ -22,7 +22,6 @@
     <li> email cofirmation</li>
     <li>password recovery </li>
 
-
   </ul>
   
   <hr>
@@ -48,3 +47,6 @@
     Make requests to the API endpoints using a tool like Postman or cURL. 
     Refer to the API documentation for details on the available endpoints and request/response formats.
   </p>
+  <hr>
+  <h2>project url</h2>
+  <p>https://roadmap.sh/projects/todo-list-api</p>
