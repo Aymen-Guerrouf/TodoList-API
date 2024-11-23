@@ -16,7 +16,8 @@
     <li>Delete a task</li>
     <li>Get a list of all tasks</li>
     <li>Mark a task as completed</li>
-    <li>Filter tasks by status (completed or pending)</li>
+    <li>Search for a specific task </li>
+    <li> Sort tasks by name,status,date...</li>s
   </ul>
   
   <hr>
