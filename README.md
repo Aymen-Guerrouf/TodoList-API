@@ -19,6 +19,10 @@
     <li>Search for a specific task </li>
     <li> Sort tasks by name,status,date...</li>
     <li>authentication and authentication with google </li>
+    <li> email cofirmation</li>
+    <li>password recovery </li>
+
+
   </ul>
   
   <hr>
