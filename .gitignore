@@ -1,0 +1,10 @@
+node_modules
+config.env
+db.js 
+
+
+
+#    The  node_modules  directory is where all the dependencies are stored. We don't want to include this in our repository because it can be very large and it's not necessary. 
+#   The  config.env  file is where we store our environment variables. We don't want to include this in our repository because it contains sensitive information. 
+#    The  db.js  file is where we connect to the database. We don't want to include this in our repository because it contains sensitive information. 
+    
