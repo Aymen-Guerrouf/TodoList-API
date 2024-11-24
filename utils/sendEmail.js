@@ -165,15 +165,17 @@ exports.sendEmail = async (email) => {
       to: email,
       subject: "it's time for your todo ",
       html: `
-      <!DOCTYPE html>
-      <html>
-        <body>
-          <h1>Notification</h1>
-          <p>This is a test notification message!</p>
-          <a href="${process.env.FROM_EMAIL}" style="color: white; background: blue; padding: 10px 15px; text-decoration: none;">Take Action</a>
-          <p>Thank you,<br> ${process.env.FROM_NAME}</p>
-        </body>
-      </html>
+    <!-- Notification Container -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050">
+        <div id="reminderNotification" class="alert alert-info alert-dismissible fade show" role="alert">
+            Reminder: You have a task due soon!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js for alert functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     `,
       text: "This is a test notification message!",
     };

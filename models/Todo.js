@@ -14,7 +14,6 @@ const todoschema = new mongoose.Schema(
       trim: true,
       maxlength: [100, "Description cannot be more than 100 characters"],
     },
-
     isNotified: {
       type: Boolean,
       default: false,

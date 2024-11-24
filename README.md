@@ -21,6 +21,7 @@
     <li>authentication and authentication with google </li>
     <li> email cofirmation</li>
     <li>password recovery </li>
+    <li> send an email to users to remind them of their tasks </li>
 
   </ul>
   

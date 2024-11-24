@@ -32,6 +32,6 @@ const checkTodos = asyncHandler(async () => {
   }
 });
 // just check
-cron.schedule("* * * * *", checkTodos);
+cron.schedule("1 0 * * *", checkTodos);
 
 module.exports = { checkTodos };
