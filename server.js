@@ -11,7 +11,8 @@ const passport = require("passport");
 const rateLimit = require("express-rate-limit");
 const configurePassport = require("./config/passport");
 const User = require("./models/User");
-
+const { checkTodos } = require("./jobs/notify");
+const cron = require("node-cron");
 //Route files
 const todos = require("./routes/todo");
 const auth = require("./routes/auth");
@@ -59,6 +60,9 @@ app.use("/api/v1/auth", auth);
 
 app.use(error);
 const PORT = process.env.PORT || 3000;
+
+// start cron job
+checkTodos();
 
 const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`.green.bold);

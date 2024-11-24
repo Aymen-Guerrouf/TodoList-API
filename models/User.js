@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
     emailTokenexpiresIn: {
       type: Date,
       default: Date.now() + 24 * 60 * 60 * 1000,

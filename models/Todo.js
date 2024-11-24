@@ -14,9 +14,14 @@ const todoschema = new mongoose.Schema(
       trim: true,
       maxlength: [100, "Description cannot be more than 100 characters"],
     },
-    date: {
+
+    isNotified: {
+      type: Boolean,
+      default: false,
+    },
+    dueDate: {
       type: Date,
-      default: Date.now,
+      required: [true, "Please provide a due date"],
     },
     completed: {
       type: Boolean,

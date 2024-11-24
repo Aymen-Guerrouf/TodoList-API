@@ -25,6 +25,7 @@
     "git": "^0.1.5",
     "mongoose": "^8.8.2",
     "morgan": "^1.10.0",
+    "node-cron": "^3.0.3",
     "nodemailer": "^6.9.16",
     "nodemon": "^3.1.7",
     "passport": "^0.7.0",

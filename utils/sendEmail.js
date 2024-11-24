@@ -6,12 +6,12 @@ dotenv.config({ path: "./config/config.env" });
 
 // Create a transporter using SMTP transport
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_EMAIL,
-  port: process.env.SMTP_PORT,
+  host: "sandbox.smtp.mailtrap.io",
+  port: 587,
   secure: false, // true for 465, false for other ports
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
+    user: "73d907466fb9ee",
+    pass: "048748a822682c",
   },
 });
 
@@ -154,5 +154,33 @@ exports.sendResetEmail = async (email, token) => {
   } catch (error) {
     console.error("Error sending confirmation email:", error);
     throw new Error("Failed to send confirmation email");
+  }
+};
+
+exports.sendEmail = async (email) => {
+  try {
+    //email template
+    const mailOptions = {
+      from: ` From ${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`,
+      to: email,
+      subject: "it's time for your todo ",
+      html: `
+      <!DOCTYPE html>
+      <html>
+        <body>
+          <h1>Notification</h1>
+          <p>This is a test notification message!</p>
+          <a href="${process.env.FROM_EMAIL}" style="color: white; background: blue; padding: 10px 15px; text-decoration: none;">Take Action</a>
+          <p>Thank you,<br> ${process.env.FROM_NAME}</p>
+        </body>
+      </html>
+    `,
+      text: "This is a test notification message!",
+    };
+    // Send email
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error("Error sending notification :", error);
+    throw new Error("Failed to send notification ");
   }
 };
