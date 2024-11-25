@@ -84,6 +84,20 @@ exports.createTodo = asyncHandler(async (req, res, next) => {
 // @access  Private
 
 exports.updateTodo = asyncHandler(async (req, res, next) => {
+  const checkUser = await Todo.findById(req.params.id);
+
+  if (!checkUser) {
+    return next(
+      new ErrorResponse(`Todo not found with the id of ${req.params.id}`, 404)
+    );
+  }
+
+  if (checkUser.user.toString() !== req.user.id) {
+    return next(
+      new ErrorResponse("You are not authorized to update this Todo", 401)
+    );
+  }
+
   const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
